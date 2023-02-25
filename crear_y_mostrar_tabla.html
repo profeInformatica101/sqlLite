@@ -24,9 +24,11 @@
     
           // Bind new values
           stmt.bind({$start:1, $end:2});
+          let i = 1;
           while(stmt.step()) { //
             const row = stmt.getAsObject();
-            console.log('Aquí el registro: ' + JSON.stringify(row));
+            console.log('Aquí el registro ' +i +":" + JSON.stringify(row));
+            i++;
           }
         });
       </script>
